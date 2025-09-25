@@ -1,0 +1,13 @@
+class Solution {
+    public int reverseExponentiation(int n) {
+        // code here
+        int rev, sum=0 , num=n;
+        while(n>0){
+            rev=n%10;
+            //if(rev>0)
+            sum=(sum*10)+rev;
+            n/=10;
+        }
+        return (int) (Math.pow(num,sum));
+    }
+}
