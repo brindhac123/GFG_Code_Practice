@@ -1,0 +1,23 @@
+class Solution {
+    ArrayList<Integer> findTwoElement(int arr[]) {
+        // code here
+        ArrayList ans=new ArrayList<>();
+        int n=arr.length;
+        int miss=-1,rep=-1;
+        int fre[]=new int[n+1];
+        for(int i:arr){
+            fre[i]++;
+        }
+        for(int i=1;i<fre.length;i++){
+            if(fre[i]==2){
+                rep=i;
+            }
+            else if(fre[i]==0){
+                miss=i;
+            }
+        }
+        ans.add(rep);
+        ans.add(miss);
+        return ans;
+    }
+}
